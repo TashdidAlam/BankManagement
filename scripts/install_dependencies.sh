@@ -6,7 +6,6 @@ fi # install apache if not already installed
 # yum install -y git php php-mysqlnd mariadb105 mariadb105-server
 yum install mariadb-server -y
 amazon-linux-extras install php8.0 -y
-service php-fpm start
 
 # install codedeploy-agent
 sudo yum install ruby wget
