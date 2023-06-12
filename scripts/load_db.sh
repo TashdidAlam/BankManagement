@@ -1,1 +1,1 @@
-mysql -h abir-db.czk1aergjpmh.eu-west-2.rds.amazonaws.com -u librarian --password="librarypass" library < /tmp/library.sql 
+mysql -h tashdid-db.czk1aergjpmh.eu-west-2.rds.amazonaws.com -u root --password="12345678" library < /tmp/blmsdb.sql 
