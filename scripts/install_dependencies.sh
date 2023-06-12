@@ -3,7 +3,10 @@ if ! [ -x "$(command -v httpd)" ]; then
 yum install -y httpd >&2
 fi # install apache if not already installed
 # install git php and mariadb
-yum install -y git php php-mysqlnd mariadb105 mariadb105-server
+# yum install -y git php php-mysqlnd mariadb105 mariadb105-server
+yum install mariadb-server -y
+amazon-linux-extras install php8.0 -y
+service php-fpm start
 
 # install codedeploy-agent
 sudo yum install ruby wget
