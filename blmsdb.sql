@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `tblassignlocker`
 --
 
-CREATE TABLE `tblassignlocker` (
+CREATE TABLE IF NOT EXISTS `tblassignlocker` (
   `ID` int(10) NOT NULL,
   `FullName` varchar(250) DEFAULT NULL,
   `Email` varchar(250) DEFAULT NULL,
@@ -64,7 +64,7 @@ INSERT INTO `tblassignlocker` (`ID`, `FullName`, `Email`, `MobileNumber`, `Compl
 -- Table structure for table `tblbanker`
 --
 
-CREATE TABLE `tblbanker` (
+CREATE TABLE IF NOT EXISTS `tblbanker` (
   `ID` int(11) NOT NULL,
   `AdminName` varchar(120) DEFAULT NULL,
   `AdminuserName` varchar(20) DEFAULT NULL,
@@ -79,7 +79,7 @@ CREATE TABLE `tblbanker` (
 -- Dumping data for table `tblbanker`
 --
 
-INSERT INTO `tblbanker` (`ID`, `AdminName`, `AdminuserName`, `MobileNumber`, `Email`, `Password`, `AdminRegdate`, `UserType`) VALUES
+INSERT IGNORE INTO `tblbanker` (`ID`, `AdminName`, `AdminuserName`, `MobileNumber`, `Email`, `Password`, `AdminRegdate`, `UserType`) VALUES
 (2, 'Bank Head', 'admin', 1234596321, 'bank1@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-11-29 18:30:00', 1),
 (3, 'Anuj kumar', 'akr305', 1234567891, 'ak@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-11-29 18:30:00', 0),
 (7, 'John Doe', 'test12', 1425362514, 'jd12@test.com', 'f925916e2754e5e03f75dd58a5733251', '2022-12-01 01:11:04', 0);
@@ -90,7 +90,7 @@ INSERT INTO `tblbanker` (`ID`, `AdminName`, `AdminuserName`, `MobileNumber`, `Em
 -- Table structure for table `tbllockertype`
 --
 
-CREATE TABLE `tbllockertype` (
+CREATE TABLE IF NOT EXISTS `tbllockertype` (
   `ID` int(5) NOT NULL,
   `SizeofLocker` varchar(50) DEFAULT NULL,
   `Priceoflocker` decimal(10,0) DEFAULT NULL,
@@ -101,7 +101,7 @@ CREATE TABLE `tbllockertype` (
 -- Dumping data for table `tbllockertype`
 --
 
-INSERT INTO `tbllockertype` (`ID`, `SizeofLocker`, `Priceoflocker`, `CreationDate`) VALUES
+INSERT IGNORE INTO `tbllockertype` (`ID`, `SizeofLocker`, `Priceoflocker`, `CreationDate`) VALUES
 (6, 'Small', '11000', '2022-11-29 07:35:47'),
 (7, 'Medium', '12000', '2022-11-29 07:35:59'),
 (8, 'Large', '15000', '2022-11-29 07:36:07'),
@@ -113,7 +113,7 @@ INSERT INTO `tbllockertype` (`ID`, `SizeofLocker`, `Priceoflocker`, `CreationDat
 -- Table structure for table `tblpage`
 --
 
-CREATE TABLE `tblpage` (
+CREATE TABLE IF NOT EXISTS `tblpage` (
   `ID` int(10) NOT NULL,
   `PageType` varchar(200) DEFAULT NULL,
   `PageTitle` mediumtext DEFAULT NULL,
@@ -128,7 +128,7 @@ CREATE TABLE `tblpage` (
 -- Dumping data for table `tblpage`
 --
 
-INSERT INTO `tblpage` (`ID`, `PageType`, `PageTitle`, `PageDescription`, `Email`, `MobileNumber`, `UpdationDate`, `Timing`) VALUES
+INSERT IGNORE INTO `tblpage` (`ID`, `PageType`, `PageTitle`, `PageDescription`, `Email`, `MobileNumber`, `UpdationDate`, `Timing`) VALUES
 (1, 'aboutus', 'About Us', '<div><font color=\"#202124\" face=\"arial, sans-serif\"><b>Our mission declares our purpose of existence as a company and our objectives.</b></font></div><div><font color=\"#202124\" face=\"arial, sans-serif\"><b><br></b></font></div><div><font color=\"#202124\" face=\"arial, sans-serif\"><b>To give every customer much more than what he/she asks for in terms of quality, selection, value for money and customer service, by understanding local tastes and preferences and innovating constantly to eventually provide an unmatched experience in jewellery shopping.</b></font></div>', NULL, NULL, NULL, ''),
 (2, 'contactus', 'Contact Us', '890,Sector 62, Gyan Sarovar, GAIL Noida(Delhi/NCR)', 'info@gmail.com', 7896541239, NULL, '10:30 am to 7:30 pm');
 
