@@ -3,3 +3,4 @@ systemctl start httpd
 systemctl enable httpd
 systemctl start mariadb
 systemctl enable mariadb
+service php-fpm start
