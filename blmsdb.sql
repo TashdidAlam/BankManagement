@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `tblassignlocker` (
-  `ID` int(10) NOT NULL,
+  `ID` int(10) PRIMARY KEY NOT NULL,
   `FullName` varchar(250) DEFAULT NULL,
   `Email` varchar(250) DEFAULT NULL,
   `MobileNumber` bigint(11) DEFAULT NULL,
@@ -46,7 +46,8 @@ CREATE TABLE IF NOT EXISTS `tblassignlocker` (
   `IDproof` varchar(250) DEFAULT NULL,
   `Photo` varchar(250) DEFAULT NULL,
   `Status` int(5) DEFAULT NULL,
-  `LockerAssigndate` timestamp NULL DEFAULT current_timestamp()
+  `LockerAssigndate` timestamp NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -65,7 +66,7 @@ INSERT IGNORE INTO `tblassignlocker` (`ID`, `FullName`, `Email`, `MobileNumber`,
 --
 
 CREATE TABLE IF NOT EXISTS `tblbanker` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) PRIMARY KEY NOT NULL,
   `AdminName` varchar(120) DEFAULT NULL,
   `AdminuserName` varchar(20) DEFAULT NULL,
   `MobileNumber` bigint(10) DEFAULT NULL,
@@ -91,7 +92,7 @@ INSERT IGNORE INTO `tblbanker` (`ID`, `AdminName`, `AdminuserName`, `MobileNumbe
 --
 
 CREATE TABLE IF NOT EXISTS `tbllockertype` (
-  `ID` int(5) NOT NULL,
+  `ID` int(5) PRIMARY KEY NOT NULL,
   `SizeofLocker` varchar(50) DEFAULT NULL,
   `Priceoflocker` decimal(10,0) DEFAULT NULL,
   `CreationDate` timestamp NULL DEFAULT current_timestamp()
@@ -114,7 +115,7 @@ INSERT IGNORE INTO `tbllockertype` (`ID`, `SizeofLocker`, `Priceoflocker`, `Crea
 --
 
 CREATE TABLE IF NOT EXISTS `tblpage` (
-  `ID` int(10) NOT NULL,
+  `ID` int(10) PRIMARY KEY NOT NULL,
   `PageType` varchar(200) DEFAULT NULL,
   `PageTitle` mediumtext DEFAULT NULL,
   `PageDescription` mediumtext DEFAULT NULL,
@@ -139,26 +140,26 @@ INSERT IGNORE INTO `tblpage` (`ID`, `PageType`, `PageTitle`, `PageDescription`, 
 --
 -- Indexes for table `tblassignlocker`
 --
-ALTER TABLE `tblassignlocker`
-  ADD PRIMARY KEY (`ID`);
+-- ALTER TABLE `tblassignlocker`
+--   ADD ;
 
---
--- Indexes for table `tblbanker`
---
-ALTER TABLE `tblbanker`
-  ADD PRIMARY KEY (`ID`);
+-- --
+-- -- Indexes for table `tblbanker`
+-- --
+-- ALTER TABLE `tblbanker`
+--   ADD PRIMARY KEY (`ID`);
 
---
--- Indexes for table `tbllockertype`
---
-ALTER TABLE `tbllockertype`
-  ADD PRIMARY KEY (`ID`);
+-- --
+-- -- Indexes for table `tbllockertype`
+-- --
+-- ALTER TABLE `tbllockertype`
+--   ADD PRIMARY KEY (`ID`);
 
---
--- Indexes for table `tblpage`
---
-ALTER TABLE `tblpage`
-  ADD PRIMARY KEY (`ID`);
+-- --
+-- -- Indexes for table `tblpage`
+-- --
+-- ALTER TABLE `tblpage`
+--   ADD PRIMARY KEY (`ID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -167,27 +168,27 @@ ALTER TABLE `tblpage`
 --
 -- AUTO_INCREMENT for table `tblassignlocker`
 --
-ALTER TABLE `tblassignlocker`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+-- ALTER TABLE `tblassignlocker`
+--   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
---
--- AUTO_INCREMENT for table `tblbanker`
---
-ALTER TABLE `tblbanker`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+-- --
+-- -- AUTO_INCREMENT for table `tblbanker`
+-- --
+-- ALTER TABLE `tblbanker`
+--   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
---
--- AUTO_INCREMENT for table `tbllockertype`
---
-ALTER TABLE `tbllockertype`
-  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+-- --
+-- -- AUTO_INCREMENT for table `tbllockertype`
+-- --
+-- ALTER TABLE `tbllockertype`
+--   MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
---
--- AUTO_INCREMENT for table `tblpage`
---
-ALTER TABLE `tblpage`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
+-- --
+-- -- AUTO_INCREMENT for table `tblpage`
+-- --
+-- ALTER TABLE `tblpage`
+--   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+-- COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
