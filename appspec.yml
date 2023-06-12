@@ -4,7 +4,7 @@ files:
   - source: /
     destination: /var/www/html
     overwrite: true
-  - source: /moviebook.sql
+  - source: /blmsdb.sql
     destination: /tmp/
     overwrite: true
 hooks:
